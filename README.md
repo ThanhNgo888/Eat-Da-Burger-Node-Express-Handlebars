@@ -288,7 +288,8 @@ All the recommended files and directories from the steps above should look like 
     └── layouts
         └── main.handlebars
 ============================================================================================================
-Set up Database Node.js Burger Application using express, express handlebars, body parser and MySQL
+***Node.js Burger Application ***
+Set up Database using express, express handlebars, body parser and MySQL
 1. install package.json
 npm init -y
 2. install node modules packages
@@ -312,6 +313,12 @@ SELECT * FROM burgers -> run it -> should see the burger column and database now
 =============================================================================================================
 check to see if nodemon is working:
 npm run dev
+node server.js
+===========================================================================================================
+Connection & ORM:
+In config folder:
+set up connection.js file
+
 
 
 

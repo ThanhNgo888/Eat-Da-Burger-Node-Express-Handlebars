@@ -1,5 +1,7 @@
+//require connect from connection.js
 var connection = require("../config/connection");
 
+//create a (?) function
 function createQmarks(num){
     var arr = [];
     for(var i = 0; i < num; i++){
@@ -8,11 +10,12 @@ function createQmarks(num){
     return arr.toString();
 }
 
+//create a helper that will translate the string into an SQL readable query
 function translateSql(obj){
     var arr = [];
-    for(var key in ob){
-        var value = ob[key];
-        if(Object.hasOwnProperty.call(ob,key)){
+    for(var key in obj){
+        var value = obj[key];
+        if(Object.hasOwnProperty.call(obj,key)){
             if(typeof value === "string" && value.indexOf(" ") >= 0){
                 value = "'" + value + "'";
             }
@@ -32,7 +35,7 @@ var orm = {
             }
             cb(res);
         });
-    }
+    },
 
     insertOne: function(table, cols, vals, cb){
         var dbQuery = 

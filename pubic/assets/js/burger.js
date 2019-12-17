@@ -6,9 +6,9 @@ $(function(){
         var newBurger = {
             burger_name: $("newburger")
             .val()
-            .trim()
+            .trim(),
             devoured: 0
-        }
+        };
 
         //create post request
         $.ajax("/api/burgers", {

@@ -325,7 +325,9 @@ set up connection.js file for connection
 create burger.js and connect ORM to 
 2. set up Controllers
 create burgers_controllers.js file for router controllers
-
+================================================================
+3. In public folder -> assests folder ->js folder -> burger.js file:
+This file contains the Ajax that calls all the on click and submit events used to trigger the actions. 
 
 
 

@@ -315,9 +315,18 @@ check to see if nodemon is working:
 npm run dev
 node server.js
 ===========================================================================================================
-Connection & ORM:
+*** Create ORM Connection*
 In config folder:
-set up connection.js file
+set up connection.js file for connection
+===========================================
+===========================================================================================================
+***Create MVC(Model, View, Controller)*** 
+1. set up Models:
+create burger.js and connect ORM to 
+2. set up Controllers
+create burgers_controllers.js file for router controllers
+
+
 
 
 

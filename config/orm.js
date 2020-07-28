@@ -22,17 +22,24 @@ function translateSql(ob) {
   return arr.toString();
 }
 
+//create a variable called ORM and then export it. It will have all of selections and insert queries
 var orm = {
+  //start with selectAll
   selectAll: function(table, cb) {
     var dbQuery = "SELECT * FROM " + table + ";";
 
+    //run connection query
     connection.query(dbQuery, function(err, res) {
       if (err) {
         throw err;
       }
+
+      //callback
       cb(res);
     });
   },
+
+  //use the insert to create our insert function
   insertOne: function(table, cols, vals, cb) {
     var dbQuery =
       "INSERT INTO " +

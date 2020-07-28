@@ -1,8 +1,10 @@
-//bring in required dependencies
+//bring in required dependencies for express
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 
+
+//use the app variable to run Express
 var app = express();
 var PORT = process.env.PORT || 3000;
 

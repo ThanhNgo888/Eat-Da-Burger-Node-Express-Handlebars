@@ -59,6 +59,8 @@ var orm = {
       cb(res);
     });
   },
+
+  //creating update function
   updateOne: function(table, objColVals, condition, cb) {
     var dbQuery =
       "UPDATE " +

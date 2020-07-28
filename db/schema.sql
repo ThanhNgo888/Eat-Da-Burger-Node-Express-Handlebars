@@ -1,3 +1,4 @@
+-- create database, use it and create the table
 CREATE DATABASE burgers_db;
 USE burgers_db;
 

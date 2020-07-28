@@ -6,6 +6,8 @@ var exphbs = require("express-handlebars");
 
 //use the app variable to run Express
 var app = express();
+
+//setup the port to make a deployment for Heroku
 var PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));

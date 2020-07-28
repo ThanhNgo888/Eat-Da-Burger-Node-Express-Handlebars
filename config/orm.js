@@ -39,7 +39,7 @@ var orm = {
     });
   },
 
-  //use the insert to create our insert function
+  //use the insertOne to create our insert function
   insertOne: function(table, cols, vals, cb) {
     var dbQuery =
       "INSERT INTO " +

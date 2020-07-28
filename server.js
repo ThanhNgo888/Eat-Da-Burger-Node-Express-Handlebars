@@ -14,6 +14,8 @@ var PORT = process.env.PORT || 3000;
 //static files
 app.use(express.static("public"));
 
+
+//connect bodyParser elements(urlencoded and json files)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

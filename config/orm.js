@@ -79,6 +79,8 @@ var orm = {
       cb(res);
     });
   },
+
+  //delete function created
   deleteOne: function(table, condition, cb) {
     var dbQuery = "DELETE FROM " + table + " WHERE " + condition;
     console.log(dbQuery);

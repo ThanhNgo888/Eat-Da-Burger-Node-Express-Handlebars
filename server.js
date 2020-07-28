@@ -10,6 +10,8 @@ var app = express();
 //setup the port to make a deployment for Heroku
 var PORT = process.env.PORT || 3000;
 
+
+//static files
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));

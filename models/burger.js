@@ -1,3 +1,5 @@
+//creating a model burger.js and connect ORM to it
+//creating a variable called burger and export it
 var orm = require("../config/orm.js");
 var burger = {
   selectAll: function(cb) {
@@ -24,5 +26,5 @@ var burger = {
     });
   }
 };
-
+//export it
 module.exports = burger;

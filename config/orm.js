@@ -8,6 +8,7 @@ function createQmarks(num) {
   return arr.toString();
 }
 
+//creating an ORM
 function translateSql(ob) {
   var arr = [];
   for (var key in ob) {

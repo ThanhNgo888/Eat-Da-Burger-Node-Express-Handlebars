@@ -2,7 +2,7 @@
 var express = require("express");
 var burger = require("../models/burger");
 
-
+//creating routers
 var router = express.Router();
 
 router.get("/", function(req, res) {

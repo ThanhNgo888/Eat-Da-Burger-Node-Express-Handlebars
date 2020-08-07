@@ -1,34 +1,40 @@
 //adding require connections to Express and the models burger.js file
 var express = require("express");
 var burger = require("../models/burger");
-
+//====================================================
 //creating routers
 var router = express.Router();
 
-router.get("/", function(req, res) {
-  burger.selectAll(function(data) {
+//====================================================
+//creating router get
+router.get("/", function (req, res) {
+  burger.selectAll(function (data) {
+    //this is handlebar object
     var hdbrsObj = {
-      burgers: data
+      burgers: data,
     };
     console.log(hdbrsObj);
     res.render("index", hdbrsObj);
   });
-
-  router.post("/api/burgers", function(req, res) {
+//====================================================
+//creating post router to put router and delete router
+  router.post("/api/burgers", function (req, res) {
     burger.insertOne(
       ["burger_name", "devoured"],
       [req.body.burger_name, req.body.devoured],
-      function(result) {
+      function (result) {
         // Send back the ID of new burger
         res.json({ id: result.insertId });
       }
     );
   });
-  router.put("/api/burgers/:id", function(req, res) {
+
+  //put router
+  router.put("/api/burgers/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
-    burger.updateOne({ devoured: req.body.devoured }, condition, function(
+    burger.updateOne({ devoured: req.body.devoured }, condition, function (
       result
     ) {
       if (result.changedRows === 0) {
@@ -38,11 +44,13 @@ router.get("/", function(req, res) {
       }
     });
   });
-  router.delete("/api/burgers/:id", function(req, res) {
+
+  //delete router
+  router.delete("/api/burgers/:id", function (req, res) {
     var condition = "id = " + req.params.id;
     console.log("condition", condition);
 
-    burger.deleteOne(condition, function(result) {
+    burger.deleteOne(condition, function (result) {
       if (result.changedRows === 0) {
         return res.status(404).end();
       } else {

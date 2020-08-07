@@ -1,7 +1,11 @@
+//put it within a function to ensure that everything loads first.
 $(function() {
+  //use the event to trigger it 
   $(".create-form").on("submit", function(event) {
+    //prevent the initial load
     event.preventDefault();
 
+    //creating a new burger
     var newBurger = {
       burger_name: $("#newburger")
         .val()
@@ -9,6 +13,7 @@ $(function() {
       devoured: 0
     };
 
+    //doing the post resquest
     $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
@@ -17,15 +22,17 @@ $(function() {
       location.reload();
     });
   });
-
+//=========================================================
+//creating eatburger onClick event
   $(".eatburger").on("click", function(event) {
     event.preventDefault();
 
     var id = $(this).data("id");
     var devouredState = {
-      devoured: 1
+      devoured: 1 //devoured set to true
     };
 
+    //put post
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: devouredState
@@ -35,6 +42,7 @@ $(function() {
     });
   });
 
+  //delete event
   $(".trashburger").on("click", function(event) {
     event.preventDefault();
 
